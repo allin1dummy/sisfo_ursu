@@ -3,18 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_repeat_menu"
-    android:orientation="vertical" >
+    android:orientation="horizontal" >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dip"
-        android:background="@drawable/rounded_background"
-        android:orientation="vertical" >
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="0dip" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Course Grade" />
+        <ImageButton
+            android:id="@+id/detail_1"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_selected"
+            android:scaleType="centerInside"
+            android:src="@drawable/facebook"/>
+
+        <ImageButton
+            android:id="@+id/detail_2"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"
+            android:src="@drawable/twitter"/>
+
+        <ImageButton
+            android:id="@+id/detail_3"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"
+            android:src="@drawable/instagram"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/light_green" >
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/grade_detail"/>
     </LinearLayout>
 </LinearLayout>
