@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/layout_rounded_bg"
+    android:background="#FFFFFF"
     android:orientation="vertical" >
 
     <View
         android:id="@+id/v_line"
         android:layout_width="fill_parent"
-        android:layout_height="5dp"
-        android:layout_marginTop="16dp"
-        android:background="#A89714" />
+        android:layout_height="16dp"
+        android:background="#DFB056" />
     
     <ImageView 
         android:src="@drawable/logo_ursula"
@@ -19,12 +18,6 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
         />
-    
-    <View
-        android:id="@+id/v_line"
-        android:layout_width="fill_parent"
-        android:layout_height="5dp"
-        android:background="#A89714" />
     
     <TextView
         android:id="@+id/tv_username"
@@ -87,9 +80,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:textStyle="italic|bold"
+        android:textStyle="italic"
         android:ems="10"
         android:text="@string/forgot_pwd"
         android:textColor="#000000"
         android:gravity="right"/>
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="fill_parent"
+        android:layout_height="16dp"
+        android:background="#DFB056" />
 </LinearLayout>
