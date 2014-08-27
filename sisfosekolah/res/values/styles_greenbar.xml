@@ -29,7 +29,6 @@
         <item name="android:actionModeBackground">@drawable/cab_background_top_greenbar</item>
         <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_greenbar</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Greenbar</item>
-        <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="ActionBar.Solid.Greenbar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
@@ -37,7 +36,13 @@
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_greenbar</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_solid_greenbar</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Greenbar</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle.Greenbar</item>
     </style>
+
+	<style name="ActionBar.TitleTextStyle.Greenbar" parent="ActionBar.Solid.Greenbar">
+	    <item name="android:textColor">@android:color/white</item>
+	    <item name="android:textStyle">bold</item>
+	</style>
 
     <style name="ActionBar.Transparent.Greenbar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@drawable/ab_transparent_greenbar</item>
