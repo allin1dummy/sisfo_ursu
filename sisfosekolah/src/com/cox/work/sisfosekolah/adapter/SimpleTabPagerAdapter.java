@@ -1,11 +1,11 @@
 package com.cox.work.sisfosekolah.adapter;
 
-import com.cox.work.sisfosekolah.view.CourseGradeFragment;
-import com.cox.work.sisfosekolah.view.SummaryGradeFragment;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.cox.work.sisfosekolah.view.CourseGradeFragment;
+import com.cox.work.sisfosekolah.view.SummaryGradeFragment;
 
 public class SimpleTabPagerAdapter extends FragmentPagerAdapter {
 	

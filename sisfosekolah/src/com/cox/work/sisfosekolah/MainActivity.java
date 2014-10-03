@@ -22,6 +22,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 import com.cox.work.sisfosekolah.adapter.SimpleTabPagerAdapter;
+import com.squareup.okhttp.OkHttpClient;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 	private EditText etUserName,
@@ -40,7 +41,17 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         
         initView();
         initEventListener();
-        
+         
+//        OkHttpClient client = new OkHttpClient();
+
+//        String run(String url) throws IOException {
+//          Request request = new Request.Builder()
+//              .url(url)
+//              .build();
+//
+//          Response response = client.newCall(request).execute();
+//          return response.body().string();
+//        }
 
 		for (int i = 0; i < tabPagerAdapter.getCount(); i++) {
 			actionBar.addTab(actionBar.newTab()

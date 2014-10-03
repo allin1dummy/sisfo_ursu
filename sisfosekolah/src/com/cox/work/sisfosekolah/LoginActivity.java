@@ -25,12 +25,16 @@ public class LoginActivity extends Activity {
         
         initView();
         initEventListener();
+        
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 	private void initView() {
     	etUserName = (EditText) findViewById(R.id.et_username);
     	etPwd = (EditText) findViewById(R.id.et_password);
     	btnLogin =  (Button) findViewById(R.id.btn_login);
+    	btnLogin.setEnabled(true);
     	tvForgotPwd =  (TextView) findViewById(R.id.tv_forgotpwd);
 	}
     
@@ -38,7 +42,8 @@ public class LoginActivity extends Activity {
     	etUserName.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-				btnLogin.setEnabled(arg0.length()>0?true:false);
+				// TODO
+				//btnLogin.setEnabled(arg0.length()>0?true:false);
 			}
 			
 			@Override
@@ -74,7 +79,8 @@ public class LoginActivity extends Activity {
 
     private boolean verifyLogin(String userId, String pwd) {
     	// TODO Make login verification
-    	return userId.equalsIgnoreCase(pwd)?true:false;
+    	//return userId.equalsIgnoreCase(pwd)?true:false;
+    	return true;
 	}
 
 	@Override
