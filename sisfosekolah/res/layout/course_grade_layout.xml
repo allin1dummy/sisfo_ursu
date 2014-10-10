@@ -14,7 +14,7 @@
         android:paddingRight="0dip" >
 
         <ImageButton
-            android:id="@+id/detail_1"
+            android:id="@+id/ib_detail_1"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"
@@ -24,7 +24,7 @@
             android:src="@drawable/facebook"/>
 
         <ImageButton
-            android:id="@+id/detail_2"
+            android:id="@+id/ib_detail_2"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"
@@ -34,7 +34,7 @@
             android:src="@drawable/twitter"/>
 
         <ImageButton
-            android:id="@+id/detail_3"
+            android:id="@+id/ib_detail_3"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"

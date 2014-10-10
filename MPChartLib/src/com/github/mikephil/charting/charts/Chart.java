@@ -901,7 +901,7 @@ public abstract class Chart extends View implements AnimatorUpdateListener {
     protected void drawDescription() {
 
         mDrawCanvas
-                .drawText(mDescription, getWidth() - mOffsetRight - 10, getHeight() - mOffsetBottom
+                .drawText(mDescription, (getWidth()/4) + mOffsetRight + 20, getHeight() - mOffsetBottom
                         - 10, mDescPaint);
     }
 
