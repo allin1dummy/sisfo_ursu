@@ -12,6 +12,12 @@ import com.github.mikephil.charting.data.DataSet;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.utils.Legend;
+import com.github.mikephil.charting.utils.XLabels;
+import com.github.mikephil.charting.utils.YLabels;
+import com.github.mikephil.charting.utils.Legend.LegendPosition;
+import com.github.mikephil.charting.utils.XLabels.XLabelPosition;
+import com.github.mikephil.charting.utils.YLabels.YLabelPosition;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -45,9 +51,8 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 		root = inflater.inflate(R.layout.course_grade_layout, container, false);
     	initView();
 
-		LineChart chart = (LineChart) root.findViewById(R.id.chart);
-		chart.setData(getDataSet());
-		chart.setDescription("Mata Pelajaran:");
+		createLineChart();
+		createBarChart();
 		//BarChart chart= (BarChart) root.findViewById(R.id.chart);
 		//chart.setData(getBarData());
 		
@@ -55,6 +60,124 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 		//createLineChart();
 		
 		return root;
+	}
+
+	private void createBarChart() {
+		BarChart mChart = (BarChart) root.findViewById(R.id.barchart);
+
+        // enable the drawing of values
+        mChart.setDrawYValues(true);
+
+        mChart.setDescription("Mata Pelajaran:");
+
+        // if more than 60 entries are displayed in the chart, no values will be
+        // drawn
+        //mChart.setMaxVisibleValueCount(60);
+
+        // sets the number of digits for values inside the chart
+        //mChart.setValueDigits(2);
+
+        // disable 3D
+        mChart.set3DEnabled(false);
+
+        // scaling can now only be done on x- and y-axis separately
+        mChart.setPinchZoom(false);
+
+        // draw shadows for each bar that show the maximum value
+//        mChart.setDrawBarShadow(true);
+
+        //mChart.setUnit(" €");
+
+        // change the position of the y-labels
+        //YLabels yLabels = mChart.getYLabels();
+        //yLabels.setPosition(YLabelPosition.LEFT);
+
+        //XLabels xLabels = mChart.getXLabels();
+        //xLabels.setPosition(XLabelPosition.TOP);
+        // mChart.setDrawXLabels(false);
+
+        mChart.setDrawGridBackground(true);
+        mChart.setDrawHorizontalGrid(true);
+        mChart.setDrawVerticalGrid(true);
+        mChart.setDrawYLabels(true);
+        
+        // sets the text size of the values inside the chart
+        mChart.setValueTextSize(10f);
+
+        mChart.setDrawBorder(true);
+        // mChart.setBorderPositions(new BorderPosition[] {BorderPosition.LEFT,
+        // BorderPosition.RIGHT});
+        
+        BarData data = createBarData();
+        mChart.setData(data);
+
+        XLabels xl = mChart.getXLabels();
+        xl.setPosition(XLabelPosition.BOTTOM);
+        xl.setCenterXLabelText(true);
+        
+        YLabels yl = mChart.getYLabels();
+        yl.setLabelCount(8);
+        
+        Legend l = mChart.getLegend();
+        l.setPosition(LegendPosition.BELOW_CHART_LEFT);
+        l.setFormSize(8f);
+        l.setXEntrySpace(4f);
+	}
+
+	private BarData createBarData() {
+		ArrayList<String> xVals = new ArrayList<String>();
+        xVals.add("IPA");
+        xVals.add("IPS");
+        xVals.add("IPB");
+
+        ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
+        yVals1.add(new BarEntry((float) (Math.random() * 10), 0));
+        yVals1.add(new BarEntry((float) (Math.random() * 9), 1));
+        yVals1.add(new BarEntry((float) (Math.random() * 8), 2));
+        
+        BarDataSet set1 = new BarDataSet(yVals1, "Dataset");
+        set1.setBarSpacePercent(35f);
+        //set1.setColor(Color.RED);
+
+        ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
+        dataSets.add(set1);
+
+        BarData data = new BarData(xVals, dataSets);
+		return data;
+	}
+
+	private void createBarChartX() {
+		BarChart bChart =  (BarChart) root.findViewById(R.id.barchart);
+		bChart.setData(getBarData());
+		bChart.setDescription("Mata Pelajaran:");
+		bChart.setValueTextSize(10f);
+		//bChart.setDrawingEnabled(true);
+        // scaling can now only be done on x- and y-axis separately
+		bChart.setPinchZoom(false);
+		bChart.setTouchEnabled(false);
+		bChart.setDrawGridBackground(false);
+		bChart.setDrawHorizontalGrid(true);
+		bChart.setDrawVerticalGrid(true);
+		bChart.setDrawBorder(false);
+		bChart.setDrawValueAboveBar(false);
+
+        XLabels xl = bChart.getXLabels();
+        xl.setPosition(XLabelPosition.BOTTOM);
+        xl.setCenterXLabelText(true);
+        
+        YLabels yl = bChart.getYLabels();
+        yl.setLabelCount(8);
+        
+        Legend l = bChart.getLegend();
+        l.setPosition(LegendPosition.BELOW_CHART_LEFT);
+        l.setFormSize(8f);
+        l.setXEntrySpace(4f);
+	}
+
+	private void createLineChart() {
+		LineChart chart = (LineChart) root.findViewById(R.id.linechart);
+		chart.setData(getDataSet());
+		chart.setDescription("Mata Pelajaran:");
 	}
 
 //	private void createLineChart() {
@@ -160,28 +283,34 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 	private BarData getBarData() {
 		ArrayList<BarEntry> valsComp1 = new ArrayList<BarEntry>();
 	    ArrayList<BarEntry> valsComp2 = new ArrayList<BarEntry>();
+		ArrayList<BarEntry> valsComp3 = new ArrayList<BarEntry>();
+	    ArrayList<BarEntry> valsComp4 = new ArrayList<BarEntry>();
 	    
-	    Entry c1e1 = new Entry(100.000f, 0); // 0 == quarter 1
-	    valsComp1.add((BarEntry) c1e1);
-	    Entry c1e2 = new Entry(50.000f, 1); // 1 == quarter 2 ...
-	    valsComp1.add((BarEntry) c1e2);
+	    BarEntry be1 = new BarEntry(85f, 0);
+	    valsComp1.add(be1);
+	    BarEntry be2 = new BarEntry(95f, 1);
+	    valsComp2.add(be2);
+	    BarEntry be3 = new BarEntry(78f, 2);
+	    valsComp3.add(be3);
+	    BarEntry be4 = new BarEntry(69f, 3);
+	    valsComp4.add(be4);
+	    //BarEntry be5 = new BarEntry(60f, 4);
+	    //valsComp5.add(be5);
 	    // and so on ...
 
-	    Entry c2e1 = new Entry(120.000f, 0); // 0 == quarter 1
-	    valsComp2.add((BarEntry) c2e1);
-	    Entry c2e2 = new Entry(110.000f, 1); // 1 == quarter 2 ...
-	    valsComp2.add((BarEntry) c2e2);
-	    //...
-	    
-	    BarDataSet setComp1 = new BarDataSet(valsComp1, "Company 1");
-	    BarDataSet setComp2 = new BarDataSet(valsComp2, "Company 2");
+	    BarDataSet setComp1 = new BarDataSet(valsComp1, "Matematika");
+	    BarDataSet setComp2 = new BarDataSet(valsComp2, "Kesenian");
+	    BarDataSet setComp3 = new BarDataSet(valsComp3, "IPA");
+	    BarDataSet setComp4 = new BarDataSet(valsComp4, "IPS");
 	    
 	    ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
 	    dataSets.add(setComp1);
 	    dataSets.add(setComp2);
+	    dataSets.add(setComp3);
+	    dataSets.add(setComp4);
 
 	    ArrayList<String> xVals = new ArrayList<String>();
-	    xVals.add("1.Q"); xVals.add("2.Q"); xVals.add("3.Q"); xVals.add("4.Q"); 
+	    xVals.add("I"); xVals.add("II"); xVals.add("III"); xVals.add("IV"); 
 	    
 		BarData dt = new BarData(xVals, dataSets);
 	    return dt;
