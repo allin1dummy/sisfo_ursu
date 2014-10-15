@@ -39,11 +39,11 @@ public class SimpleTabPagerAdapter extends FragmentPagerAdapter {
 	public CharSequence getPageTitle(int position) {
 		switch (position) {
 		case 0:
-			return "Nilai Mata Pelajaran";				
+			return "Aspek Pengetahuan";				
 		case 1:
-			return "Kesimpulan";					
+			return "Aspek Lainnya";
 		default:
-			return "Nilai Mata Pelajaran";				
+			return "";				
 		}
 	}
 }

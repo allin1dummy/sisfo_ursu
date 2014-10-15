@@ -29,12 +29,13 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class CourseGradeFragment extends Fragment implements OnClickListener{
 	private View root;
-	private ImageButton btnDetail1;
-	private ImageButton btnDetail2;
-	private ImageButton btnDetail3;
+	private TextView btnDetail1;
+	private TextView btnDetail2;
+	private TextView btnDetail3;
 	private LinearLayout mLayoutDetail1;
 	private LinearLayout mLayoutDetail2;
 	private LinearLayout mLayoutDetail3;
@@ -68,7 +69,7 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
         // enable the drawing of values
         mChart.setDrawYValues(true);
 
-        mChart.setDescription("Mata Pelajaran:");
+        mChart.setDescription(" ");
 
         // if more than 60 entries are displayed in the chart, no values will be
         // drawn
@@ -178,6 +179,9 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 		LineChart chart = (LineChart) root.findViewById(R.id.linechart);
 		chart.setData(getDataSet());
 		chart.setDescription("Mata Pelajaran:");
+
+        XLabels xl = chart.getXLabels();
+        xl.setPosition(XLabelPosition.BOTTOM);
 	}
 
 //	private void createLineChart() {
@@ -224,11 +228,11 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 //	}
 
 	private void initView() {
-		btnDetail1 = (ImageButton) root.findViewById(R.id.ib_detail_1);
+		btnDetail1 = (TextView) root.findViewById(R.id.ib_detail_1);
     	btnDetail1.setOnClickListener(this);
-    	btnDetail2 = (ImageButton) root.findViewById(R.id.ib_detail_2);
+    	btnDetail2 = (TextView) root.findViewById(R.id.ib_detail_2);
     	btnDetail2.setOnClickListener(this);
-    	btnDetail3 = (ImageButton) root.findViewById(R.id.ib_detail_3);
+    	btnDetail3 = (TextView) root.findViewById(R.id.ib_detail_3);
     	btnDetail3.setOnClickListener(this);
     	buttonList = new ArrayList<View>();
     	buttonList.add(btnDetail1);

@@ -13,35 +13,38 @@
         android:paddingLeft="5dip"
         android:paddingRight="0dip" >
 
-        <ImageButton
+        <TextView
             android:id="@+id/ib_detail_1"
+            android:text="T\nU\nL\nI\nS"
+            android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"
             android:padding="5dip"
             android:background="@drawable/button_rounded_left_grey_selected"
-            android:scaleType="centerInside"
-            android:src="@drawable/facebook"/>
+            android:scaleType="centerInside"/>
 
-        <ImageButton
+        <TextView
             android:id="@+id/ib_detail_2"
+            android:text="L\nI\nS\nA\nN"
+            android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"
             android:padding="5dip"
             android:background="@drawable/button_rounded_left_grey_unselected"
-            android:scaleType="centerInside"
-            android:src="@drawable/twitter"/>
+            android:scaleType="centerInside"/>
 
-        <ImageButton
+        <TextView
             android:id="@+id/ib_detail_3"
+            android:text="T\nU\nG\nA\nS"
+            android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
             android:layout_height="@dimen/top_statistic_button_height"
             android:layout_marginBottom="2dip"
             android:padding="5dip"
             android:background="@drawable/button_rounded_left_grey_unselected"
-            android:scaleType="centerInside"
-            android:src="@drawable/instagram"/>
+            android:scaleType="centerInside"/>
     </LinearLayout>
     
     <LinearLayout
