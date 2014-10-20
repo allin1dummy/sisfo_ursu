@@ -117,7 +117,8 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
         xl.setCenterXLabelText(true);
         
         YLabels yl = mChart.getYLabels();
-        yl.setLabelCount(8);
+        yl.setLabelCount(10);
+        Log.e("cox", yl.toString());
         
         Legend l = mChart.getLegend();
         l.setPosition(LegendPosition.BELOW_CHART_LEFT);
@@ -133,8 +134,8 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
         yVals1.add(new BarEntry((float) (Math.random() * 10), 0));
-        yVals1.add(new BarEntry((float) (Math.random() * 9), 1));
-        yVals1.add(new BarEntry((float) (Math.random() * 8), 2));
+        yVals1.add(new BarEntry((float) (Math.random() * 10), 1));
+        yVals1.add(new BarEntry((float) (Math.random() * 10), 2));
         
         BarDataSet set1 = new BarDataSet(yVals1, "Dataset");
         set1.setBarSpacePercent(35f);
@@ -147,92 +148,22 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 		return data;
 	}
 
-	private void createBarChartX() {
-		BarChart bChart =  (BarChart) root.findViewById(R.id.barchart);
-		bChart.setData(getBarData());
-		bChart.setDescription("Mata Pelajaran:");
-		bChart.setValueTextSize(10f);
-		//bChart.setDrawingEnabled(true);
-        // scaling can now only be done on x- and y-axis separately
-		bChart.setPinchZoom(false);
-		bChart.setTouchEnabled(false);
-		bChart.setDrawGridBackground(false);
-		bChart.setDrawHorizontalGrid(true);
-		bChart.setDrawVerticalGrid(true);
-		bChart.setDrawBorder(false);
-		bChart.setDrawValueAboveBar(false);
-
-        XLabels xl = bChart.getXLabels();
-        xl.setPosition(XLabelPosition.BOTTOM);
-        xl.setCenterXLabelText(true);
-        
-        YLabels yl = bChart.getYLabels();
-        yl.setLabelCount(8);
-        
-        Legend l = bChart.getLegend();
-        l.setPosition(LegendPosition.BELOW_CHART_LEFT);
-        l.setFormSize(8f);
-        l.setXEntrySpace(4f);
-	}
-
 	private void createLineChart() {
 		LineChart chart = (LineChart) root.findViewById(R.id.linechart);
 		chart.setData(getDataSet());
 		chart.setDescription("Mata Pelajaran:");
+		chart.setMaxScaleY(10f);
 
         XLabels xl = chart.getXLabels();
         xl.setPosition(XLabelPosition.BOTTOM);
 	}
 
-//	private void createLineChart() {
-//		int[] x = new int[]{0,1,2,3,4,5,6,7,8,9};
-//		int[] y = new int[]{10,12,23,13,24,15,36,27,20,9};
-//		XYSeries series = new XYSeries("Test Nilai");
-//		for (int i=0; i<x.length; i++) {
-//		    series.add(x[i], y[i]);
-//		}
-//		
-//		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
-//		dataset.addSeries(series);
-//		
-//		// Now we create the renderer
-//		XYSeriesRenderer renderer = new XYSeriesRenderer();
-//		renderer.setLineWidth(5);
-//		renderer.setColor(Color.RED);
-//		// Include low and max value
-//		renderer.setDisplayBoundingPoints(true);
-//		// we add point markers
-//		renderer.setPointStyle(PointStyle.CIRCLE);
-//		renderer.setPointStrokeWidth(7);
-//		
-//		XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
-//		mRenderer.addSeriesRenderer(renderer);
-//		// We want to avoid black border
-//		mRenderer.setMarginsColor(Color.argb(0x00, 0xff, 0x00, 0x00)); // transparent margins
-//		// Disable Pan on two axis
-//		mRenderer.setPanEnabled(false, false);
-//		mRenderer.setYAxisMax(51);
-//		mRenderer.setYAxisMin(0);
-//		mRenderer.setShowGrid(false); // we show the grid
-//		mRenderer.setChartTitle("Testtt");
-//		mRenderer.setXTitle("xxx");
-//		mRenderer.setYTitle("yyy");
-//		mRenderer.setAxesColor(Color.BLUE);
-//		mRenderer.setGridColor(Color.YELLOW);
-//		mRenderer.setXLabelsColor(Color.GREEN);
-//		mRenderer.setYAxisColor(Color.MAGENTA);
-//		//mRenderer.setYLabelsColor(Color.CYAN, Color.BLACK);
-//		
-//		GraphicalView chartView = ChartFactory.getLineChartView(getActivity(), dataset, mRenderer);
-//		mLayoutDetail2.addView(chartView);
-//	}
-
 	private void initView() {
-		btnDetail1 = (TextView) root.findViewById(R.id.ib_detail_1);
+		btnDetail1 = (TextView) root.findViewById(R.id.tv_knowledge_tulis);
     	btnDetail1.setOnClickListener(this);
-    	btnDetail2 = (TextView) root.findViewById(R.id.ib_detail_2);
+    	btnDetail2 = (TextView) root.findViewById(R.id.tv_knowledge_lisan);
     	btnDetail2.setOnClickListener(this);
-    	btnDetail3 = (TextView) root.findViewById(R.id.ib_detail_3);
+    	btnDetail3 = (TextView) root.findViewById(R.id.tv_knowledge_tugas);
     	btnDetail3.setOnClickListener(this);
     	buttonList = new ArrayList<View>();
     	buttonList.add(btnDetail1);
@@ -256,16 +187,24 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 		ArrayList<Entry> valsComp1 = new ArrayList<Entry>();
 	    ArrayList<Entry> valsComp2 = new ArrayList<Entry>();
 	    
-	    Entry c1e1 = new Entry(9f, 0); // 0 == quarter 1
+	    Entry c1e1 = new Entry((float)(Math.random() * 10), 0);
 	    valsComp1.add(c1e1);
-	    Entry c1e2 = new Entry(7.8f, 1); // 1 == quarter 2 ...
+	    Entry c1e2 = new Entry((float)(Math.random() * 10), 1);
 	    valsComp1.add(c1e2);
+	    Entry c1e3 = new Entry((float)(Math.random() * 10), 2);
+	    valsComp1.add(c1e3);
+	    Entry c1e4 = new Entry((float)(Math.random() * 10), 3);
+	    valsComp1.add(c1e4);
 	    // and so on ...
 
-	    Entry c2e1 = new Entry(8.5f, 0); // 0 == quarter 1
+	    Entry c2e1 = new Entry((float)(Math.random() * 10), 0);
 	    valsComp2.add(c2e1);
-	    Entry c2e2 = new Entry(9.5f, 1); // 1 == quarter 2 ...
+	    Entry c2e2 = new Entry((float)(Math.random() * 10), 1);
 	    valsComp2.add(c2e2);
+	    Entry c2e3 = new Entry((float)(Math.random() * 10), 2);
+	    valsComp2.add(c2e3);
+	    Entry c2e4 = new Entry((float)(Math.random() * 10), 3);
+	    valsComp2.add(c2e4);
 	    //...
 	    
 	    LineDataSet setComp1 = new LineDataSet(valsComp1, "Math");
@@ -284,42 +223,6 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 	    return data;
 	}
 	
-	private BarData getBarData() {
-		ArrayList<BarEntry> valsComp1 = new ArrayList<BarEntry>();
-	    ArrayList<BarEntry> valsComp2 = new ArrayList<BarEntry>();
-		ArrayList<BarEntry> valsComp3 = new ArrayList<BarEntry>();
-	    ArrayList<BarEntry> valsComp4 = new ArrayList<BarEntry>();
-	    
-	    BarEntry be1 = new BarEntry(85f, 0);
-	    valsComp1.add(be1);
-	    BarEntry be2 = new BarEntry(95f, 1);
-	    valsComp2.add(be2);
-	    BarEntry be3 = new BarEntry(78f, 2);
-	    valsComp3.add(be3);
-	    BarEntry be4 = new BarEntry(69f, 3);
-	    valsComp4.add(be4);
-	    //BarEntry be5 = new BarEntry(60f, 4);
-	    //valsComp5.add(be5);
-	    // and so on ...
-
-	    BarDataSet setComp1 = new BarDataSet(valsComp1, "Matematika");
-	    BarDataSet setComp2 = new BarDataSet(valsComp2, "Kesenian");
-	    BarDataSet setComp3 = new BarDataSet(valsComp3, "IPA");
-	    BarDataSet setComp4 = new BarDataSet(valsComp4, "IPS");
-	    
-	    ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
-	    dataSets.add(setComp1);
-	    dataSets.add(setComp2);
-	    dataSets.add(setComp3);
-	    dataSets.add(setComp4);
-
-	    ArrayList<String> xVals = new ArrayList<String>();
-	    xVals.add("I"); xVals.add("II"); xVals.add("III"); xVals.add("IV"); 
-	    
-		BarData dt = new BarData(xVals, dataSets);
-	    return dt;
-	}
-
     private void setBackground(View v){
 		for(int i = 0 ; i < buttonList.size(); i++){
 			if (v.getId() == buttonList.get(i).getId()) {

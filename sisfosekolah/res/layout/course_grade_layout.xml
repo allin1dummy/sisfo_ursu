@@ -14,7 +14,7 @@
         android:paddingRight="0dip" >
 
         <TextView
-            android:id="@+id/ib_detail_1"
+            android:id="@+id/tv_knowledge_tulis"
             android:text="T\nU\nL\nI\nS"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
@@ -25,7 +25,7 @@
             android:scaleType="centerInside"/>
 
         <TextView
-            android:id="@+id/ib_detail_2"
+            android:id="@+id/tv_knowledge_lisan"
             android:text="L\nI\nS\nA\nN"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
@@ -36,7 +36,7 @@
             android:scaleType="centerInside"/>
 
         <TextView
-            android:id="@+id/ib_detail_3"
+            android:id="@+id/tv_knowledge_tugas"
             android:text="T\nU\nG\nA\nS"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
