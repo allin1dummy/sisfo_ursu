@@ -14,7 +14,7 @@
         android:paddingRight="0dip" >
 
         <TextView
-            android:id="@+id/tv_xxx_tulis"
+            android:id="@+id/tv_pengetahuan_tulis"
             android:text="T\nU\nL\nI\nS"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
@@ -25,7 +25,7 @@
             android:scaleType="centerInside"/>
 
         <TextView
-            android:id="@+id/tv_xxx_lisan"
+            android:id="@+id/tv_pengetahuan_lisan"
             android:text="L\nI\nS\nA\nN"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"
@@ -36,7 +36,51 @@
             android:scaleType="centerInside"/>
 
         <TextView
-            android:id="@+id/tv_xxx_tugas"
+            android:id="@+id/tv_pengetahuan_tugas"
+            android:text="T\nU\nG\nA\nS"
+            android:gravity="center"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/tv_pengetahuan_kerja"
+            android:text="T\nU\nG\nA\nS"
+            android:gravity="center"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/tv_pengetahuan_demonstrasi"
+            android:text="T\nU\nG\nA\nS"
+            android:gravity="center"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/tv_pengetahuan_proyek"
+            android:text="T\nU\nG\nA\nS"
+            android:gravity="center"
+            android:layout_width="@dimen/top_statistic_button_width"
+            android:layout_height="@dimen/top_statistic_button_height"
+            android:layout_marginBottom="2dip"
+            android:padding="5dip"
+            android:background="@drawable/button_rounded_left_grey_unselected"
+            android:scaleType="centerInside"/>
+
+        <TextView
+            android:id="@+id/tv_pengetahuan_portofolio"
             android:text="T\nU\nG\nA\nS"
             android:gravity="center"
             android:layout_width="@dimen/top_statistic_button_width"

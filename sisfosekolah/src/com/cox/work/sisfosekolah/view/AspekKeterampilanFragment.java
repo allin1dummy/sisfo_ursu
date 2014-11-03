@@ -31,7 +31,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class CourseGradeFragment extends Fragment implements OnClickListener{
+public class AspekKeterampilanFragment extends Fragment implements OnClickListener{
 	private View root;
 	private TextView btnDetail1;
 	private TextView btnDetail2;
@@ -49,7 +49,7 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		root = inflater.inflate(R.layout.course_grade_layout, container, false);
+		root = inflater.inflate(R.layout.keterampilan_layout, container, false);
     	initView();
 
 		createLineChart();
@@ -159,11 +159,11 @@ public class CourseGradeFragment extends Fragment implements OnClickListener{
 	}
 
 	private void initView() {
-		btnDetail1 = (TextView) root.findViewById(R.id.tv_knowledge_tulis);
+		btnDetail1 = (TextView) root.findViewById(R.id.tv_keterampilan_tulis);
     	btnDetail1.setOnClickListener(this);
-    	btnDetail2 = (TextView) root.findViewById(R.id.tv_knowledge_lisan);
+    	btnDetail2 = (TextView) root.findViewById(R.id.tv_keterampilan_lisan);
     	btnDetail2.setOnClickListener(this);
-    	btnDetail3 = (TextView) root.findViewById(R.id.tv_knowledge_tugas);
+    	btnDetail3 = (TextView) root.findViewById(R.id.tv_keterampilan_tugas);
     	btnDetail3.setOnClickListener(this);
     	buttonList = new ArrayList<View>();
     	buttonList.add(btnDetail1);

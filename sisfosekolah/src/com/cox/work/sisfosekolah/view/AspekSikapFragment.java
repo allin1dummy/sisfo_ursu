@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.cox.work.sisfosekolah.R;
 
-public class SummaryGradeFragment extends Fragment implements OnClickListener{
+public class AspekSikapFragment extends Fragment implements OnClickListener{
 	private View root;
 	private ArrayList<View> buttonList;
 	private TextView btnDetail1;
@@ -29,13 +29,13 @@ public class SummaryGradeFragment extends Fragment implements OnClickListener{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
-		root =  inflater.inflate(R.layout.summary_layout, container, false);
+		root =  inflater.inflate(R.layout.sikap_layout, container, false);
 
-		btnDetail1 = (TextView) root.findViewById(R.id.tv_xxx_tulis);
+		btnDetail1 = (TextView) root.findViewById(R.id.tv_sikap_tulis);
     	btnDetail1.setOnClickListener(this);
-    	btnDetail2 = (TextView) root.findViewById(R.id.tv_xxx_lisan);
+    	btnDetail2 = (TextView) root.findViewById(R.id.tv_sikap_lisan);
     	btnDetail2.setOnClickListener(this);
-    	btnDetail3 = (TextView) root.findViewById(R.id.tv_xxx_tugas);
+    	btnDetail3 = (TextView) root.findViewById(R.id.tv_sikap_tugas);
     	btnDetail3.setOnClickListener(this);
     	
     	buttonList = new ArrayList<View>();
